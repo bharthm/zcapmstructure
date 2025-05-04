@@ -1,0 +1,530 @@
+{
+ "meta": {
+  "creator": "cds-dk 8.8.2"
+ },
+ "$version": "2.0",
+ "definitions": {
+  "infra": {
+   "kind": "service",
+   "@cds.external": true,
+   "@m.IsDefaultEntityContainer": "true",
+   "@sap.supported.formats": "atom json xlsx"
+  },
+  "infra.ZSFTY_PERMITSet": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.pageable": "false",
+   "@sap.content.version": "1",
+   "elements": {
+    "Mandt": {
+     "key": true,
+     "type": "cds.String",
+     "length": 3,
+     "@sap.unicode": "false",
+     "@sap.label": "Client",
+     "notNull": true
+    },
+    "Gpno": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.unicode": "false",
+     "@sap.label": "Genral Permit Number",
+     "notNull": true
+    },
+    "Spno": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.unicode": "false",
+     "@sap.label": "Special Permit No",
+     "notNull": true
+    },
+    "Reqdt": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "Request Date"
+    },
+    "Gpcrtdt": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "General Permit Creat"
+    },
+    "Spcrtdt": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "Special Permit Creat"
+    },
+    "Werks": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.unicode": "false",
+     "@sap.label": "Plant"
+    },
+    "Area": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.unicode": "false",
+     "@sap.label": "Business Area"
+    },
+    "Contractor": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.unicode": "false",
+     "@sap.label": "Contractor Name"
+    },
+    "Supervisor": {
+     "type": "cds.String",
+     "length": 25,
+     "@sap.unicode": "false",
+     "@sap.label": "Supervisor"
+    },
+    "Initiator": {
+     "type": "cds.String",
+     "length": 25,
+     "@sap.unicode": "false",
+     "@sap.label": "Name of the Initiato"
+    },
+    "Modhead": {
+     "type": "cds.String",
+     "length": 25,
+     "@sap.unicode": "false",
+     "@sap.label": "Module Head"
+    },
+    "StDate": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "Validity Start"
+    },
+    "StTime": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "Start time"
+    },
+    "EndDate": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "Validity End"
+    },
+    "EndTime": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "End Time"
+    },
+    "Workdes": {
+     "type": "cds.String",
+     "length": 100,
+     "@sap.unicode": "false",
+     "@sap.label": "Work Description"
+    },
+    "GPHodApproved": {
+     "type": "cds.Boolean",
+     "@sap.unicode": "false",
+     "@sap.label": "Approved by HOD"
+    },
+    "GPHodName": {
+     "type": "cds.String",
+     "length": 25,
+     "@sap.unicode": "false",
+     "@sap.label": "HOD Name"
+    },
+    "GPHodAprvDt": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "HOD Approved Date"
+    },
+    "GPSaftyApproved": {
+     "type": "cds.Boolean",
+     "@sap.unicode": "false",
+     "@sap.label": "Approved by Safety"
+    },
+    "GPSaftyofcrName": {
+     "type": "cds.String",
+     "length": 25,
+     "@sap.unicode": "false",
+     "@sap.label": "Safety officer Name"
+    },
+    "GPSaftyAprvDt": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "Safety Ofcr Apr dt"
+    },
+    "GPSecApproved": {
+     "type": "cds.Boolean",
+     "@sap.unicode": "false",
+     "@sap.label": "Approved by Security"
+    },
+    "GPSecofcrName": {
+     "type": "cds.String",
+     "length": 25,
+     "@sap.unicode": "false",
+     "@sap.label": "Security Officer Nam"
+    },
+    "GPSecAprvDt": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "Security Ofcr Apr dt"
+    },
+    "GPHodRejected": {
+     "type": "cds.Boolean",
+     "@sap.unicode": "false",
+     "@sap.label": "Rejected by HOD"
+    },
+    "GPHodrejdt": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "HOD Rejected Date"
+    },
+    "GPSaftyRejected": {
+     "type": "cds.Boolean",
+     "@sap.unicode": "false",
+     "@sap.label": "Rejected by Safety"
+    },
+    "GPSaftyrejdt": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "Safety Ofcrr Reje Dt"
+    },
+    "GPSecRejected": {
+     "type": "cds.Boolean",
+     "@sap.unicode": "false",
+     "@sap.label": "Rejected by Security"
+    },
+    "GPSecrejdt": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "Security Of Rej Dt"
+    },
+    "GPRejRemarks": {
+     "type": "cds.String",
+     "length": 100,
+     "@sap.unicode": "false",
+     "@sap.label": "Rejection Remarks"
+    },
+    "HodApproved": {
+     "type": "cds.Boolean",
+     "@sap.unicode": "false",
+     "@sap.label": "Approved by HOD"
+    },
+    "HodName": {
+     "type": "cds.String",
+     "length": 25,
+     "@sap.unicode": "false",
+     "@sap.label": "HOD Name"
+    },
+    "HodAprvDt": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "HOD Approved Date"
+    },
+    "SaftyApproved": {
+     "type": "cds.Boolean",
+     "@sap.unicode": "false",
+     "@sap.label": "Approved by Safety"
+    },
+    "SaftyofcrName": {
+     "type": "cds.String",
+     "length": 25,
+     "@sap.unicode": "false",
+     "@sap.label": "Safety officer Name"
+    },
+    "SaftyAprvDt": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "Safety Ofcr Apr dt"
+    },
+    "SecApproved": {
+     "type": "cds.Boolean",
+     "@sap.unicode": "false",
+     "@sap.label": "Approved by Security"
+    },
+    "SecofcrName": {
+     "type": "cds.String",
+     "length": 25,
+     "@sap.unicode": "false",
+     "@sap.label": "Security Officer Nam"
+    },
+    "SecAprvDt": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "Security Ofcr Apr dt"
+    },
+    "HodRejected": {
+     "type": "cds.Boolean",
+     "@sap.unicode": "false",
+     "@sap.label": "Rejected by HOD"
+    },
+    "Hodrejdt": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "HOD Rejected Date"
+    },
+    "SaftyRejected": {
+     "type": "cds.Boolean",
+     "@sap.unicode": "false",
+     "@sap.label": "Rejected by Safety"
+    },
+    "Saftyrejdt": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "Safety Ofcrr Reje Dt"
+    },
+    "SecRejected": {
+     "type": "cds.Boolean",
+     "@sap.unicode": "false",
+     "@sap.label": "Rejected by Security"
+    },
+    "Secrejdt": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.unicode": "false",
+     "@sap.label": "Security Of Rej Dt"
+    },
+    "RejRemarks": {
+     "type": "cds.String",
+     "length": 100,
+     "@sap.unicode": "false",
+     "@sap.label": "Rejection Remarks"
+    },
+    "Gpflag": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.unicode": "false",
+     "@sap.label": "GeneralPermit"
+    },
+    "Spflag": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.unicode": "false",
+     "@sap.label": "Special Permit"
+    },
+    "Sptype": {
+     "type": "cds.String",
+     "length": 100,
+     "@sap.unicode": "false",
+     "@sap.label": "Special Pmt Type"
+    },
+    "ContName01": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.unicode": "false",
+     "@sap.label": "Contract Person Name 01"
+    },
+    "Gender01": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.unicode": "false",
+     "@sap.label": "Gender 01"
+    },
+    "ContName02": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.unicode": "false",
+     "@sap.label": "Contract Person Name 02"
+    },
+    "Gender02": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.unicode": "false",
+     "@sap.label": "Gender 02"
+    },
+    "ContName03": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.unicode": "false",
+     "@sap.label": "Contract Person Name 03"
+    },
+    "Gender03": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.unicode": "false",
+     "@sap.label": "Gender 03"
+    },
+    "ContName04": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.unicode": "false",
+     "@sap.label": "Contract Person Name 04"
+    },
+    "Gender04": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.unicode": "false",
+     "@sap.label": "Gender 04"
+    },
+    "ContName05": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.unicode": "false",
+     "@sap.label": "Contract Person Name 05"
+    },
+    "Gender05": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.unicode": "false",
+     "@sap.label": "Gender 05"
+    },
+    "ContName06": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.unicode": "false",
+     "@sap.label": "Contract Person Name 06"
+    },
+    "Gender06": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.unicode": "false",
+     "@sap.label": "Gender 06"
+    },
+    "ContName07": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.unicode": "false",
+     "@sap.label": "Contract Person Name 07"
+    },
+    "Gender07": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.unicode": "false",
+     "@sap.label": "Gender 07"
+    },
+    "ContName08": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.unicode": "false",
+     "@sap.label": "Contract Person Name 08"
+    },
+    "Gender08": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.unicode": "false",
+     "@sap.label": "Gender 08"
+    },
+    "ContName09": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.unicode": "false",
+     "@sap.label": "Contract Person Name 09"
+    },
+    "Gender09": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.unicode": "false",
+     "@sap.label": "Gender 09"
+    },
+    "ContName10": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.unicode": "false",
+     "@sap.label": "Contract Person Name 10"
+    },
+    "Gender10": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.unicode": "false",
+     "@sap.label": "Gender 10"
+    },
+    "UniqueID": {
+     "type": "cds.String",
+     "length": 15,
+     "@sap.unicode": "false",
+     "@sap.label": "UniqueID"
+    }
+   }
+  },
+  "infra.ZSFTY_ATTSet": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.pageable": "false",
+   "@sap.addressable": "false",
+   "@sap.content.version": "1",
+   "elements": {
+    "Filename": {
+     "key": true,
+     "type": "cds.String",
+     "length": 200,
+     "@sap.unicode": "false",
+     "@sap.label": "Text (200 char)",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Sydate": {
+     "type": "cds.Timestamp",
+     "@odata.Type": "Edm.DateTime",
+     "@odata.Precision": 7,
+     "@sap.unicode": "false",
+     "@sap.label": "Current Date",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Sytime": {
+     "type": "cds.Time",
+     "@sap.unicode": "false",
+     "@sap.label": "Time",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Value": {
+     "type": "cds.LargeBinary",
+     "@sap.unicode": "false",
+     "@sap.label": "Binary String",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "Mimetype": {
+     "type": "cds.String",
+     "length": 100,
+     "@sap.unicode": "false",
+     "@sap.label": "Character 100",
+     "@sap.creatable": "false",
+     "@sap.updatable": "false",
+     "@sap.sortable": "false",
+     "@sap.filterable": "false",
+     "notNull": true
+    },
+    "blob": {
+     "type": "cds.LargeBinary",
+     "@Core.MediaType": "application/octet-stream"
+    }
+   }
+  }
+ }
+}
