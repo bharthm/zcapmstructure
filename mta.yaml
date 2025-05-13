@@ -1,37 +1,60 @@
 _schema-version: 3.3.0
 ID: zcapprotrac
+description: First CAPM Project.
 version: 1.0.0
-description: "A simple CAP project."
-parameters:
-  enable-parallel-deployments: true
-build-parameters:
-  before-all:
-    - builder: custom
-      commands:
-        - npm ci
-        - npx cds build --production
 modules:
+#-----------------------------------------------------------------
   - name: zcapprotrac-srv
-    type: nodejs
+#-----------------------------------------------------------------  
+    type: nodejs    
     path: gen/srv
+    requires:
+      - name: zcapprotrac-destination
+      - name: zcapprotrac-connectivity
+      - name: zcapprotrac-xsuaa
+    provides:
+      - name: srv-api
+        properties:             
+          srv-url: ${default-url}  #dont put it inside quote
     parameters:
-      instances: 1
       buildpack: nodejs_buildpack
+      instances: 1
     build-parameters:
       builder: npm-ci
-    provides:
-      - name: srv-api # required by consumers of CAP services (e.g. approuter)
-        properties:
-          srv-url: ${default-url}
-    requires:
-      - name: zcapprotrac-destination 
-      - name: zcapprotrac-connectivity         
-      - name: zcapprotrac-xsuaa                 
 
+#-----------------------------------------------------------------      
+  - name: zcapprotrac-ui
+#-----------------------------------------------------------------  
+    type: nodejs
+    path: app
+    requires:
+      - name: srv-api
+        group: destinations
+        properties:
+          name: srv-api
+          url: ~{srv-url}
+          forwardAuthToken: true
+          strictSSL: true      
+      - name: zcapprotrac-xsuaa
+    parameters:
+      buildpack: nodejs_buildpack
+      build-parameters:
+        builder: npm-ci    
 resources:
   - name: zcapprotrac-destination
     type: org.cloudfoundry.managed-service
     parameters:
+      config: null
+      HTML5Runtime_enabled: false
+      init_data:
+        instance:
+          destinations:
+            - Authentication: NoAuthentication
+              Name: ui5
+              ProxyType: Internet
+              Type: HTTP
+              URL: 'https://ui5.sap.com'
+          existing_destinations_policy: update
       service: destination
       service-plan: lite
 
@@ -45,8 +68,10 @@ resources:
   - name: zcapprotrac-xsuaa
     type: org.cloudfoundry.managed-service
     parameters:
+      config:
+        xsappname: zcapprotrac-${space}
       path: ./xs-security.json
       service: xsuaa
       service-plan: application    
-      config:
-        xsappname: zcapprotrac-${space}         
+parameters:
+  enable-parallel-deployments: true      
